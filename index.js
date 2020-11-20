@@ -9,6 +9,22 @@ app.get("/data/movies", (req, res) => {
     res.send(movies);
 });
 
+//gets movies by specific id
+app.get("/data/movies/:id", (req, res) => {
+    let id = req.params.id;
+    let movies = repoContext.movies.findMovieById(id);
+    res.send(movies);
+});
+
+app.post('/data/movies', (req, res) =>{
+
+    let newMovie = req.body;
+    let addedMovie = repoContext.movies.createMovie(newMovie);
+    res.send(addedMovie)
+
+});
+   
+
 app.get("/", (req, res) =>{
 
     res.send("what is up?");
