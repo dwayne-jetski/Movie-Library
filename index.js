@@ -2,6 +2,8 @@ const  response  = require('express');
 const repoContext = require('./repository/repository-wrapper')
 const express = require('express');
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //gets all movie data
 app.get("/data/movies", (req, res) => {
@@ -16,6 +18,7 @@ app.get("/data/movies/:id", (req, res) => {
     res.send(movies);
 });
 
+//creates a new movie into the object array of movies
 app.post('/data/movies', (req, res) =>{
 
     let newMovie = req.body;
@@ -23,6 +26,14 @@ app.post('/data/movies', (req, res) =>{
     res.send(addedMovie)
 
 });
+
+//updates movies with new info
+app.put("/data/movies", (req, res) => {
+    let movieToUpdate = req.body;
+    let updatedMovie = repoContext.movies.updateMovie(movieToUpdate);
+    res.send(updatedMovie);
+   });
+   
    
 
 app.get("/", (req, res) =>{
