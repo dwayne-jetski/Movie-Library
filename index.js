@@ -2,6 +2,7 @@ const  response  = require('express');
 const repoContext = require('./repository/repository-wrapper')
 const express = require('express');
 const app = express();
+const validators = require("./Validators/validators")
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -27,12 +28,14 @@ app.post('/data/movies', (req, res) =>{
 
 });
 
-//updates movies with new info
+//updates movie with new info
 app.put("/data/movies", (req, res) => {
     let movieToUpdate = req.body;
     let updatedMovie = repoContext.movies.updateMovie(movieToUpdate);
     res.send(updatedMovie);
    });
+
+   
    
    
 
