@@ -73,3 +73,7 @@ function searchTiles(value, data){
 }
 
 
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('click')
+  })
