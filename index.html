@@ -1,8 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Music Library</title>
+<title>Movie Library</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="stylesheet.css">
 <script src="jquery-3.5.1.js"></script>
 <script src="index.js"></script>
 </head>
+
+<body class="body-background">
+    <div class = "container">
+        
+        <h1 class = "row header-background">Movie-Library</h1>
+
+        <div class = "row">
+            <input type = "text" id = "user-input" placeholder="Search...">
+        </div>
+
+
+        <div class="container" id = "movie-tiles">
+            <div class = "row">
+
+                    <div class = "col text-center card container col-sm-3 card-styles">    
+                        <div class="card-image-format">
+                           <img class="card-img-top" src="https://images.unsplash.com/photo-1594908900066-3f47337549d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title font-weight-bold">
+                                Shawn of the Dead
+                            </h2>
+                            
+                            <h7>
+                                director: Edgar Wright
+                            </h7>
+                            <h7>
+                                genre: Comedy
+                            </h7>
+                        </div>
+                    </div>
+
+
+                    <div class = "col text-center card container col-sm-4">
+                        This is another movie 
+                    </div>
+                    <div class = "col text-center card container col-sm-4">
+                        This is yet another movie 
+                    </div>
+                    <div class = "col text-center card container col-sm-4">
+                        This is yet another movie 
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
