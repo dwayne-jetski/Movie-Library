@@ -9,7 +9,7 @@ $.ajax({
     }
 });
 
-function buildCards(data){
+/* function buildCards(data){
     for(var i = 0; i < data.length; i++){
 
          
@@ -35,4 +35,10 @@ function buildCards(data){
                 )
            
     }  
-}
+} */
+
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('click')
+  })
+   
