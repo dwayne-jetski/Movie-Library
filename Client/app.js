@@ -1,15 +1,17 @@
 "use strict"
 
-$.ajax({
+const apiData = $.ajax({
     url: "http://localhost:5000/data/movies",
     dataType: "json",
     type: "get",
     success: function(response){
-        buildCards(response);
+        
     }
 });
 
-/* function buildCards(data){
+
+
+function buildCards(data){
     for(var i = 0; i < data.length; i++){
 
          
@@ -35,10 +37,39 @@ $.ajax({
                 )
            
     }  
-} */
+} 
+
+//buildCards(data);
+
+//Search Bar jquery
+$('index.html').ready(()=>{
+    $('#user-input').on(`keyup`, function(){
+        var value = $(this).val();
+        console.log(value);
+        var data = searchTiles(value, apiData)
+        buildCards(data);
+    }
+
+    );
+});
+
+//function to search 
+function searchTiles(value, data){
+
+    var filteredData = [];
+
+    for(var i = 0; i < data.length; i++){
+        value = value.toLowerCase();
+        var userInput = data[i].name.toLowerCase();
+
+        if(userInput.includes(value)){
+
+            filteredData.push(data[i]);
+
+        }
+    }
+
+    return filteredData;
+}
 
 
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('click')
-  })
-   
