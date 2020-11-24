@@ -5,7 +5,7 @@ $.ajax({
     dataType: "json",
     type: "get",
     success: function(response){
-        buildCards(response);
+        //buildCards(response);
     }
 });
 
@@ -38,7 +38,7 @@ $.ajax({
 } */
 
 
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('click')
+$('#myModal').on('shown.bs.modal', function() {
+    $('#myInput').focus()
   })
    
