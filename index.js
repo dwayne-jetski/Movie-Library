@@ -2,6 +2,9 @@ const  response  = require('express');
 const repoContext = require('./repository/repository-wrapper')
 const express = require('express');
 const app = express();
+const validators = require("./Validators/validators");
+var cors = require('cors');
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -20,27 +23,18 @@ app.get("/data/movies/:id", (req, res) => {
 
 //creates a new movie into the object array of movies
 app.post('/data/movies', (req, res) =>{
-
     let newMovie = req.body;
     let addedMovie = repoContext.movies.createMovie(newMovie);
-    res.send(addedMovie)
-
+    res.send(addedMovie);
 });
 
-//updates movies with new info
+//updates movie with new info
 app.put("/data/movies", (req, res) => {
     let movieToUpdate = req.body;
     let updatedMovie = repoContext.movies.updateMovie(movieToUpdate);
     res.send(updatedMovie);
    });
-   
-   
 
-app.get("/", (req, res) =>{
-
-    res.send("what is up?");
-
-});
 
 app.listen(5000, function(){
     console.log("This is the server;");
