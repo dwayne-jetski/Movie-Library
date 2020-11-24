@@ -21,14 +21,14 @@ function buildCards(data){
                     </div>
                     <div class="card-body">
                         <h2 class="card-title font-weight-bold">
-                            Shawn of the Dead
+                        ${data[i].title}
                         </h2>
                         
                         <h7>
-                            director: Edgar Wright
+                        ${data[i].director}
                         </h7>
                         <h7>
-                            genre: Comedy
+                        ${data[i].genre}
                         </h7>
                     </div>`
                 
