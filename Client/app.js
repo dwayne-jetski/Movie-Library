@@ -70,9 +70,11 @@ function searchCards(value, data){
 
     for(var i = 0; i < data.length; i++){
         value = value.toLowerCase();
-        var userInput = data[i].title.toLowerCase();
+        var userInputTitle = data[i].title.toLowerCase();
+        var userInputDirector = data[i].director.toLowerCase();
+        var userInputGenre = data[i].genre.toLowerCase(); 
 
-        if(userInput.includes(value)){
+        if(userInputTitle.includes(value) || userInputDirector.includes(value) || userInputGenre.includes(value)){
 
             filteredData.push(data[i]);
 
@@ -99,8 +101,48 @@ function userInputSearch(apiData){
     }
 
     );
+
+    //event listener for modal to create new movie
+
+    $('#add-movie-submit').on('click', ()=>{
+           postMovie();
+        }); 
+    
 });
 };
+
+
+ //function to creat the post request for the movie
+function postMovie(){
+    $.ajax({
+        url:  "http://localhost:5000/data/movies",
+        dataType: "json",
+        type: "post",
+        data: createMovieObject(),
+        success: function(){    
+            alert("Movie Sucessfully Posted!")
+        }
+    });
+}
+
+//function to creat the movie object for the 
+function createMovieObject(response){
+            
+            var title = $('#title-info').val();
+            var director = $('#director-info').val();
+            var genre = $('#genre-info').val();
+
+            console.log(title, director, genre)
+            
+            let newMovie = {
+                title: title,
+                director: director,
+                genre: genre,
+
+            }
+
+            return newMovie;
+} 
 
 
 $('#myModal').on('shown.bs.modal', function () {

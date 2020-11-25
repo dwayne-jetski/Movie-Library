@@ -40,5 +40,11 @@
     "title": "Shawn of the Dead",
     "director": "Edgar Wright",
     "genre": "Comedy"
+  },
+  {
+    "id": 8,
+    "title": "Point Break",
+    "director": "Kathryn Bigelow",
+    "genre": "Action"
   }
 ]
