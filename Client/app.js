@@ -43,7 +43,7 @@ function buildCards(data){
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ function searchCards(value, data){
         value = value.toLowerCase();
         var userInputTitle = data[i].title.toLowerCase();
         var userInputDirector = data[i].director.toLowerCase();
-        var userInputGenre = data[i].genre.toLowerCase();
+        var userInputGenre = data[i].genre.toLowerCase(); 
 
         if(userInputTitle.includes(value) || userInputDirector.includes(value) || userInputGenre.includes(value)){
 
@@ -92,10 +92,48 @@ function userInputSearch(apiData){
     }
 
     );
+
+    //event listener for modal to create new movie
+
+    $('#add-movie-submit').on('click', ()=>{
+           postMovie();
+        }); 
+    
 });
 };
 
 
+ //function to creat the post request for the movie
+function postMovie(){
+    $.ajax({
+        url:  "http://localhost:5000/data/movies",
+        dataType: "json",
+        type: "post",
+        data: createMovieObject(),
+        success: function(){    
+            alert("Movie Sucessfully Posted!")
+        }
+    });
+}
+
+//function to creat the movie object for the 
+function createMovieObject(response){
+            /
+            var title = $('#title-info').val();
+            var director = $('#director-info').val();
+            var genre = $('#genre-info').val();
+
+            console.log(title, director, genre)
+            
+            let newMovie = {
+                title: title,
+                director: director,
+                genre: genre,
+
+            }
+
+            return newMovie;
+} 
 
 
 $('#myModal').on('shown.bs.modal', function () {

@@ -26,6 +26,46 @@
                 <!-- cards will be created here -->
             </div>
         </div>
+        
     </div>
+
+
+
+
+<!-- add movie button -->
+    <button class = "col text-center card container col-sm-3 " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal">  
+        
+        <div >
+            <h2 class="card-title font-weight-bold">Click to Add Movie</h2>
+        </div>
+    </button>
+    
+    <div class="modal fade" id="${data[i].id}Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enter Movie's Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h7>Title: </h7><input class="form-control" id="title-info" type="text" placeholder="Enter Movie Title">
+                <br><h7>Director: </h7><input class="form-control" id="director-info" type="text" placeholder="Enter Director">
+                <br><h7>Genre: </h7><input class="form-control" id="genre-info" type="text" placeholder="Enter Genre">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="add-movie-submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
 
 </body>
