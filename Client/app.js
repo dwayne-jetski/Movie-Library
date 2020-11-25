@@ -21,8 +21,6 @@ function buildCards(data){
                 </div>
                 <div class="card-body">
                     <h2 class="card-title font-weight-bold">${data[i].title}</h2>
-                    <h7>${data[i].director}</h7>
-                    <h7>${data[i].genre}</h7>
                 </div>
             </button>
             
@@ -45,8 +43,7 @@ function buildCards(data){
                     </div>
                 </div>
             </div>
-        </div>
-            `
+        </div>`
             
         )
            
