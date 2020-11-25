@@ -26,7 +26,7 @@
         <div class="container" >
             <div class = "row d-flex justify-content-center" id = "movie-tiles">
 
-                    <div class = "col text-center card container col-sm-3 card-styles ">    
+                    <!-- <button class = "col text-center card container col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">  
                         <div class="card-image-format">
                            <img class="card-img-top" src="https://images.unsplash.com/photo-1594908900066-3f47337549d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
                         </div>
@@ -42,7 +42,7 @@
                                 genre: Comedy
                             </h7>
                         </div>
-                    </div>
+                    </button> -->
                     
             </div>
             
@@ -53,28 +53,26 @@
 
     </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Launch demo modal
-        </button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">${data[i].title}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h7>${data[i].director}</h7>
+                        <h7>${data[i].genre}</h7>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
+        </div> -->
+
+
 </body>
