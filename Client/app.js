@@ -118,7 +118,7 @@ function postMovie(){
 
 //function to creat the movie object for the 
 function createMovieObject(response){
-            /
+            
             var title = $('#title-info').val();
             var director = $('#director-info').val();
             var genre = $('#genre-info').val();
