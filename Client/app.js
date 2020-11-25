@@ -9,6 +9,15 @@
     }
 });
 
+$.ajax({
+    url: "http://localhost:5000/data/movies",
+    dataType: "json",
+    type: "put",
+    success: function(response){
+        
+    }
+});
+
 //buildCards(data);
 function buildCards(data){
     
@@ -43,7 +52,7 @@ function buildCards(data){
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary">Update</button>
                     </div>
                 </div>
             </div>
@@ -96,4 +105,5 @@ function userInputSearch(apiData){
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('click')
-  })
+})
+
