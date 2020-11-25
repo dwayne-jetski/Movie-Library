@@ -61,9 +61,11 @@ function searchCards(value, data){
 
     for(var i = 0; i < data.length; i++){
         value = value.toLowerCase();
-        var userInput = data[i].title.toLowerCase();
+        var userInputTitle = data[i].title.toLowerCase();
+        var userInputDirector = data[i].director.toLowerCase();
+        var userInputGenre = data[i].genre.toLowerCase();
 
-        if(userInput.includes(value)){
+        if(userInputTitle.includes(value) || userInputDirector.includes(value) || userInputGenre.includes(value)){
 
             filteredData.push(data[i]);
 
@@ -92,6 +94,8 @@ function userInputSearch(apiData){
     );
 });
 };
+
+
 
 
 $('#myModal').on('shown.bs.modal', function () {
