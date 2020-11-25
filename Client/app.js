@@ -1,17 +1,19 @@
 "use strict"
 
-const apiData = $.ajax({
+ $.ajax({
     url: "http://localhost:5000/data/movies",
     dataType: "json",
     type: "get",
     success: function(response){
-        
+        userInputSearch(response);  
     }
 });
 
-
-
+//buildCards(data);
 function buildCards(data){
+    
+    $('#movie-tiles').empty();
+
     for(var i = 0; i < data.length; i++){
 
          
@@ -39,28 +41,14 @@ function buildCards(data){
     }  
 } 
 
-//buildCards(data);
-
-//Search Bar jquery
-$('index.html').ready(()=>{
-    $('#user-input').on(`keyup`, function(){
-        var value = $(this).val();
-        console.log(value);
-        var data = searchTiles(value, apiData)
-        buildCards(data);
-    }
-
-    );
-});
-
 //function to search 
-function searchTiles(value, data){
+function searchCards(value, data){
 
     var filteredData = [];
 
     for(var i = 0; i < data.length; i++){
         value = value.toLowerCase();
-        var userInput = data[i].name.toLowerCase();
+        var userInput = data[i].title.toLowerCase();
 
         if(userInput.includes(value)){
 
@@ -72,6 +60,25 @@ function searchTiles(value, data){
     return filteredData;
 }
 
+
+//Search Bar jquery
+function userInputSearch(apiData){
+    buildCards(apiData)
+
+    $('index.html').ready(()=>{
+
+    $('#user-input').on(`keyup`, function(){
+        var value = $(this).val();
+        if(value != null){
+            var data = searchCards(value, apiData)
+            buildCards(data);
+        }
+        
+    }
+
+    );
+});
+};
 
 
 $('#myModal').on('shown.bs.modal', function () {
