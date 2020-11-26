@@ -64,5 +64,23 @@
     "title": "Blade Runner",
     "director": "Ridley Scott",
     "genre": "Sci-Fi"
+  },
+  {
+    "id": 12,
+    "title": "Scott Pilgrim Vs The World",
+    "director": "Edgar Wright",
+    "genre": "Comedy"
+  },
+  {
+    "id": 13,
+    "title": "What About Bob?",
+    "director": "Director's Name",
+    "genre": "Comedy"
+  },
+  {
+    "id": 14,
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "genre": "Crime/Drama"
   }
 ]
