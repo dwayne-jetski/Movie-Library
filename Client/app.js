@@ -138,17 +138,16 @@ function userInputSearch(apiData){
 };
 
 
-function updateMovie(dataId){
-    let newUrl =  "http://localhost:5000/data/movies/" + (dataId +1);
-    console.log(newUrl)
+function updateMovie(){
 
     $.ajax({
-        url:  newUrl,
+        url:  "http://localhost:5000/data/movies",
         dataType: "json",
         type: "put",
+        data: createMovieObject(),
         success: function(){   
             alert("Movie Sucessfully Updated!");
-            runProgram();
+            //runProgram();
         }
     });
 }
@@ -175,8 +174,6 @@ function updateForm(data, dataId){
         </div>`
     );
     $('#update-movie-submit').on('click', ()=>{
-        //console.log("hello from submit")
-        //var movieId = $(event.target).attr("data-id") - 1;
         updateMovie(dataId);
     }); 
 }
