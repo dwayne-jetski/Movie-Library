@@ -1,14 +1,18 @@
 "use strict"
 
- $.ajax({
-    url: "http://localhost:5000/data/movies",
-    dataType: "json",
-    type: "get",
-    success: function(response){
-        userInputSearch(response);  
-    }
-});
+runProgram();
 
+
+function runProgram(){
+    $.ajax({
+        url: "http://localhost:5000/data/movies",
+        dataType: "json",
+        type: "get",
+        success: function(response){
+            userInputSearch(response);  
+        }
+    });
+}
 //buildCards(data);
 function buildCards(data){
     
@@ -119,11 +123,6 @@ function userInputSearch(apiData){
         });
 
         //event listener for modal to create new movie
-        $('#add-movie-submit').on('click', ()=>{
-            postMovie();
-            }); 
-
-        //event listener for modal to create new movie
 
         $('#add-movie-submit').on('click', ()=>{
             postMovie();
@@ -184,7 +183,9 @@ function postMovie(){
         type: "post",
         data: createMovieObject(),
         success: function(){    
-            alert("Movie Sucessfully Posted!")
+            alert("Movie Sucessfully Posted!");
+            runProgram()
+
         }
     });
 }
