@@ -1,15 +1,18 @@
 "use strict"
 
- $.ajax({
-    url: "http://localhost:5000/data/movies",
-    dataType: "json",
-    type: "get",
-    success: function(response){
-        userInputSearch(response);  
-    }
-});
+runProgram();
 
 
+function runProgram(){
+    $.ajax({
+        url: "http://localhost:5000/data/movies",
+        dataType: "json",
+        type: "get",
+        success: function(response){
+            userInputSearch(response);  
+        }
+    });
+}
 //buildCards(data);
 function buildCards(data){
     
@@ -17,7 +20,7 @@ function buildCards(data){
 
     for(var i = 0; i < data.length; i++){
 
-        if(data[i].hasOwnProperty('image') === true){
+        if(data[i].hasOwnProperty('image') == true){
             $(`#movie-tiles`).append(
 
                 `<button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
@@ -109,7 +112,7 @@ function userInputSearch(apiData){
     buildCards(apiData)
 
     $('index.html').ready(()=>{
-
+        //event listener for search bar
         $('#user-input').on(`keyup`, function(){
             var value = $(this).val();
             if(value != null){
@@ -117,9 +120,7 @@ function userInputSearch(apiData){
                 buildCards(data);
             }
             
-        }
-
-        );
+        });
 
         //event listener for modal to create new movie
 
@@ -184,7 +185,9 @@ function postMovie(){
         type: "post",
         data: createMovieObject(),
         success: function(){    
-            alert("Movie Sucessfully Posted!")
+            alert("Movie Sucessfully Posted!");
+            runProgram()
+
         }
     });
 }
@@ -211,5 +214,4 @@ function createMovieObject(response){
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('click')
-})
-
+  })
