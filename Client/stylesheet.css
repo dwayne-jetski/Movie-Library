@@ -1,5 +1,6 @@
 .header-background{
     background-color: #0081a7;
+    color: black;
 }
 
 .body-background{
@@ -12,9 +13,29 @@
     
 }
 
+.add-movie-button-style{
+    background-color: #00afb9;
+}
+
 .card-image-format{
     margin: 3px;
     width: auto;
     height: auto;
 }
 
+.content-font-size{
+    color: black;
+}
+
+@media screen and (min-width: 601 px) {
+    .content-font-size{
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 600 px) {
+    .content-font-size{
+        font-size: 10px;
+    }
+}
