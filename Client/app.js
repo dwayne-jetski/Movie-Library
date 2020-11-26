@@ -9,6 +9,7 @@ function runProgram(){
         dataType: "json",
         type: "get",
         success: function(response){
+            buildCards(response)
             userInputSearch(response);  
         }
     });
@@ -23,7 +24,7 @@ function buildCards(data){
         if(data[i].hasOwnProperty('image') == true){
             $(`#movie-tiles`).append(
 
-                `<button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
+                `   <button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
                          <div class="card-image-format">
                             <img class="card-img-top" src=${data[i].image}>
                         </div>
@@ -47,7 +48,7 @@ function buildCards(data){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="update-movie-form" data-id="${data[i].id}" class="btn btn-primary btn-update ">Update</button>
+                                    <button type="button" id="update-movie-form" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +77,7 @@ function buildCards(data){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" data-id="${data[i].id}" class="btn btn-primary btn-update ">Update</button>
+                                    <button type="button" id="update-movie-form" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +110,7 @@ function searchCards(value, data){
 
 //Search Bar jquery
 function userInputSearch(apiData){
-    buildCards(apiData)
+    
 
     $('index.html').ready(()=>{
         //event listener for search bar
@@ -128,37 +129,30 @@ function userInputSearch(apiData){
             postMovie();
         }); 
 
-        $('.btn-update').on('click', ()=>{
-            var dataId = $(event.target).attr("data-id") - 1;
-            updateForm(apiData, dataId);
-        });
+        $('#update-movie-form').on('click', ()=>{
+            updateForm();
+        })
         
         $('#update-movie-submit').on('click', ()=>{
-            console.log("hello from submit")
-            // var movieId = $(event.target).attr("data-id") - 1;
-            // console.log(movieId);
-            //updateMovie();
+            updateMovie();
         }); 
     });
 };
 
 
 function updateMovie(){
-    
-
     $.ajax({
         url:  "http://localhost:5000/data/movies",
         dataType: "json",
         type: "put",
-        data: createMovieObject(),
         success: function(){   
-            alert("Movie Sucessfully Updated!");
-            runProgram()
+            
         }
     });
 }
 
-function updateForm(data, dataId){
+function updateForm(){
+
     $("div.modal-content").replaceWith(
         `<div class="modal-content">
             <div class="modal-header">
@@ -168,12 +162,12 @@ function updateForm(data, dataId){
                 </button>
             </div>
             <div class="modal-body">
-                <h7>Title: </h7><input class="form-control" id="title-info" type="text" value="${data[dataId].title}">
-                <br><h7>Director: </h7><input class="form-control" id="director-info" type="text" value="${data[dataId].director}">
-                <br><h7>Genre: </h7><input class="form-control" id="genre-info" type="text" value="${data[dataId].genre}">
+                <h7>Title: </h7><input class="form-control" id="title-info" type="text" placeholder="Enter Movie Title">
+                <br><h7>Director: </h7><input class="form-control" id="director-info" type="text" placeholder="Enter Director">
+                <br><h7>Genre: </h7><input class="form-control" id="genre-info" type="text" placeholder="Enter Genre">
             </div>
             <div class="modal-footer">
-                <button type="submit" id="update-movie-submit" data-id="${data[dataId].id}" class="btn btn-primary">Submit</button>
+                <button type="submit" id="update-movie-submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 
             </div>
@@ -215,6 +209,7 @@ function createMovieObject(response){
 
             return newMovie;
 } 
+
 
 
 $('#myModal').on('shown.bs.modal', function () {
