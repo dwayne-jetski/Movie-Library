@@ -20,7 +20,7 @@ function buildCards(data){
         if(data[i].hasOwnProperty('image') === true){
             $(`#movie-tiles`).append(
 
-                `   <button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
+                `<button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
                          <div class="card-image-format">
                             <img class="card-img-top" src=${data[i].image}>
                         </div>
@@ -44,7 +44,7 @@ function buildCards(data){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="update-movie-form" class="btn btn-primary">Update</button>
+                                    <button type="button" id="update-movie-form" data-id="${data[i].id}" class="btn btn-primary btn-update ">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ function buildCards(data){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="update-movie-form" class="btn btn-primary">Update</button>
+                                    <button type="button" data-id="${data[i].id}" class="btn btn-primary btn-update ">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +127,10 @@ function userInputSearch(apiData){
             postMovie();
         }); 
 
-        $('#update-movie-form').on('click', ()=>{
-            updateForm();
+        $('.btn-update').on('click', ()=>{
+            var dataId = $(event.target).attr("data-id");
+            console.log(dataId);
+            //updateForm(dataId);
         })
         
         $('#update-movie-submit').on('click', ()=>{
@@ -149,8 +151,8 @@ function updateMovie(){
     });
 }
 
-function updateForm(){
-
+function updateForm(dataId){
+    
     $("div.modal-content").replaceWith(
         `<div class="modal-content">
             <div class="modal-header">
@@ -160,7 +162,7 @@ function updateForm(){
                 </button>
             </div>
             <div class="modal-body">
-                <h7>Title: </h7><input class="form-control" id="title-info" type="text" placeholder="Enter Movie Title">
+                <h7>Title: </h7><input class="form-control" id="title-info" type="text" value=dataId>
                 <br><h7>Director: </h7><input class="form-control" id="director-info" type="text" placeholder="Enter Director">
                 <br><h7>Genre: </h7><input class="form-control" id="genre-info" type="text" placeholder="Enter Genre">
             </div>
