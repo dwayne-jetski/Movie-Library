@@ -43,7 +43,7 @@ function buildCards(data){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                
+                                    <button type="button" id="update-movie-form" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ function buildCards(data){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                
+                                    <button type="button" id="update-movie-form" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -118,15 +118,62 @@ function userInputSearch(apiData){
             
         });
 
-        
-
         //event listener for modal to create new movie
         $('#add-movie-submit').on('click', ()=>{
             postMovie();
             }); 
-    
+
+        //event listener for modal to create new movie
+
+        $('#add-movie-submit').on('click', ()=>{
+            postMovie();
+        }); 
+
+        $('#update-movie-form').on('click', ()=>{
+            updateForm();
+        })
+        
+        $('#update-movie-submit').on('click', ()=>{
+            updateMovie();
+        }); 
     });
 };
+
+
+function updateMovie(){
+    $.ajax({
+        url:  "http://localhost:5000/data/movies",
+        dataType: "json",
+        type: "put",
+        success: function(){   
+            
+        }
+    });
+}
+
+function updateForm(){
+
+    $("div.modal-content").replaceWith(
+        `<div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enter Movie's Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h7>Title: </h7><input class="form-control" id="title-info" type="text" placeholder="Enter Movie Title">
+                <br><h7>Director: </h7><input class="form-control" id="director-info" type="text" placeholder="Enter Director">
+                <br><h7>Genre: </h7><input class="form-control" id="genre-info" type="text" placeholder="Enter Genre">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="update-movie-submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>`
+    );
+}
 
 
  //function to creat the post request for the movie
