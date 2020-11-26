@@ -133,27 +133,22 @@ function userInputSearch(apiData){
             updateForm(apiData, dataId);
         });
         
-        $('#update-movie-submit').on('click', ()=>{
-            console.log("hello from submit")
-            // var movieId = $(event.target).attr("data-id") - 1;
-            // console.log(movieId);
-            //updateMovie();
-        }); 
     });
 };
 
 
-function updateMovie(){
-    
+function updateMovie(dataId){
+    let newUrl =  "http://localhost:5000/data/movies/" + (dataId +1);
+    console.log(newUrl)
 
     $.ajax({
-        url:  "http://localhost:5000/data/movies",
+        url:  newUrl,
         dataType: "json",
         type: "put",
         data: createMovieObject(),
         success: function(){   
             alert("Movie Sucessfully Updated!");
-            runProgram()
+            runProgram();
         }
     });
 }
@@ -179,6 +174,11 @@ function updateForm(data, dataId){
             </div>
         </div>`
     );
+    $('#update-movie-submit').on('click', ()=>{
+        //console.log("hello from submit")
+        //var movieId = $(event.target).attr("data-id") - 1;
+        updateMovie(dataId);
+    }); 
 }
 
 
