@@ -110,6 +110,10 @@ function userInputSearch(apiData){
         });
     });
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e2d6e9455f94d886299d21fa09594b1a0765046
 function updateForm(data, dataId){
     console.log(data);
     console.log(data[dataId]);
