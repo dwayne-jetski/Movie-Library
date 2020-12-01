@@ -138,19 +138,7 @@ function userInputSearch(apiData){
 };
 
 
-function updateMovie(){
 
-    $.ajax({
-        url:  "http://localhost:5000/data/movies",
-        dataType: "json",
-        type: "put",
-        data: createMovieObject(),
-        success: function(){   
-            alert("Movie Sucessfully Updated!");
-            //runProgram();
-        }
-    });
-}
 
 function updateForm(data, dataId){
     $("div.modal-content").replaceWith(
@@ -162,21 +150,55 @@ function updateForm(data, dataId){
                 </button>
             </div>
             <div class="modal-body">
-                <h7>Title: </h7><input class="form-control" id="title-info" type="text" value="${data[dataId].title}">
-                <br><h7>Director: </h7><input class="form-control" id="director-info" type="text" value="${data[dataId].director}">
-                <br><h7>Genre: </h7><input class="form-control" id="genre-info" type="text" value="${data[dataId].genre}">
+                <h7>Title: </h7><input class="form-control" id="title-info-${data[dataId].id}" type="text" value="${data[dataId].title}">
+                <br><h7>Director: </h7><input class="form-control" id="director-info-${data[dataId].id}" type="text" value="${data[dataId].director}">
+                <br><h7>Genre: </h7><input class="form-control" id="genre-info-${data[dataId].id}" type="text" value="${data[dataId].genre}">
             </div>
             <div class="modal-footer">
-                <button type="submit" id="update-movie-submit" data-id="${data[dataId].id}" class="btn btn-primary">Submit</button>
+                <button type="submit" data-id="${data[dataId].id}" class="btn btn-primary update-movie-submit">Submit</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 
             </div>
         </div>`
     );
-    $('#update-movie-submit').on('click', ()=>{
+    $('.update-movie-submit').on('click', ()=>{
+        var dataId = $(event.target).attr("data-id");
         updateMovie(dataId);
     }); 
 }
+
+function updateMovie(dataId){
+
+    $.ajax({
+        url:  "http://localhost:5000/data/movies",
+        dataType: "json",
+        type: "put",
+        data: updateMovieObject(dataId),
+        success: function(){   
+            alert("Movie Sucessfully Updated!");
+            runProgram();
+        }
+    });
+}
+
+function updateMovieObject(dataId){
+    console.log(dataId);        
+    var title = $('#title-info-' + dataId).val();
+    var director = $('#director-info-' + dataId).val();
+    var genre = $('#genre-info-' + dataId).val();
+
+    console.log(title, director, genre)
+    
+    let updatedMovie = {
+        id: dataId,
+        title: title,
+        director: director,
+        genre: genre,
+
+    }
+
+    return updatedMovie;
+} 
 
 
  //function to creat the post request for the movie

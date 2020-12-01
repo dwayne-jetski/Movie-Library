@@ -74,7 +74,13 @@
   {
     "id": 13,
     "title": "What About Bob?",
-    "director": "Director's Name",
+    "director": "Frank Oz",
     "genre": "Comedy"
+  },
+  {
+    "id": 14,
+    "title": "The Nightmare Before Christmas",
+    "director": "Henry Selick ",
+    "genre": "Musical"
   }
 ]

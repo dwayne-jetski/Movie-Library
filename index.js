@@ -31,6 +31,7 @@ app.post('/data/movies', (req, res) =>{
 //updates movie with new info
 app.put("/data/movies", (req, res) => {
     let movieToUpdate = req.body;
+    console.log(movieToUpdate);
     let updatedMovie = repoContext.movies.updateMovie(movieToUpdate);
     res.send(updatedMovie);
    });
