@@ -1,24 +1,15 @@
 [
   {
     "id": "1",
-<<<<<<< HEAD
     "title": "The Departed",
-=======
-    "title": "The Departed 4",
->>>>>>> 7e2d6e9455f94d886299d21fa09594b1a0765046
     "director": "Martin Scorsese",
     "genre": "Drama"
   },
   {
     "id": "2",
-<<<<<<< HEAD
     "title": "The Dark Night",
     "director": "Christopher Nolan",
     "genre": "Action"
-=======
-    "director": "Drama",
-    "genre": "Christopher Nolan"
->>>>>>> 7e2d6e9455f94d886299d21fa09594b1a0765046
   },
   {
     "id": "3",
@@ -74,7 +65,7 @@
     "title": "The Nightmare Before Christmas",
     "director": "Henry Selick ",
     "genre": "Musical",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0zfIWDFgXWd_XA09PD-VoPzWAf5MeBFFENQ&usqp=CAU"
+    "image": ""
   },
   {
     "id": "12",

@@ -19,7 +19,7 @@ function buildCards(data){
     for(var i = 0; i < data.length; i++){
         if(data[i].hasOwnProperty('image') == true){
             $(`#movie-tiles`).append(
-                `   <button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
+                `   <button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal">  
                          <div class="card-image-format">
                             <img class="card-img-top" src=${data[i].image}>
                         </div>
@@ -110,10 +110,6 @@ function userInputSearch(apiData){
         });
     });
 };
-<<<<<<< HEAD
-=======
-
->>>>>>> 7e2d6e9455f94d886299d21fa09594b1a0765046
 function updateForm(data, dataId){
     console.log(data);
     console.log(data[dataId]);
