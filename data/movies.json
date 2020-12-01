@@ -1,79 +1,80 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "title": "The Departed",
     "director": "Martin Scorsese",
     "genre": "Drama"
   },
   {
-    "id": "2",
-    "title": "The Dark Night",
+    "id": 2,
+    "title": "The Dark Knight",
     "director": "Christopher Nolan",
-    "genre": "Action"
+    "genre": "Drama"
   },
   {
-    "id": "3"
+    "id": 3,
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "genre": "Drama"
   },
   {
-    "id": "4",
-    "title": "Pineapple Express 6",
+    "id": 4,
+    "title": "Pineapple Express",
     "director": "David Gordon Green",
     "genre": "Comedy"
   },
   {
-    "id": "5",
-    "title": "Die Hard 4",
+    "id": 5,
+    "title": "Die Hard",
     "director": "John McTiernan",
     "genre": "Action"
   },
   {
-    "id": "6",
-    "title": "Hot Fuzz 3",
+    "id": 6,
+    "title": "Hot Fuzz",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
   {
-    "id": "7",
-    "title": "Shawn of the Dead 5",
+    "id": 7,
+    "title": "Shawn of the Deadliest",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
   {
-    "id": "8",
+    "id": 8,
     "title": "Point Break",
     "director": "Kathryn Bigelow",
     "genre": "Action"
   },
   {
-    "id": "9",
+    "id": 9,
     "title": "Gladiator",
     "director": "Ridley Scott",
     "genre": "Drama"
   },
   {
-    "id": "10",
+    "id": 10,
     "title": "Blade Runner 2049",
     "director": "Dennnis Villeneuve",
-    "genre": "Sci-Fi",
-    "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Blade_Runner_2049_poster.png"
+    "genre": "Sci-Fi"
   },
   {
-    "id": "11",
-    "title": "The Nightmare Before Christmas",
-    "director": "Henry Selick ",
-    "genre": "Musical",
-    "image": ""
+    "id": 11,
+    "title": "Blade Runner",
+    "director": "Ridley Scott",
+    "genre": "Sci-Fi"
   },
   {
-    "id": "12",
-    "title": "Scott Pilgrim Vs The World 6",
+    "id": 12,
+    "title": "Scott Pilgrim Vs The World",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
   {
-    "id": "13",
+    "id": 13,
     "title": "What About Bob?",
-    "director": "Frank Oz",
+    "director": "Director's Name",
     "genre": "Comedy"
   }
 ]
