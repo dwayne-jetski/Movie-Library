@@ -208,7 +208,8 @@ function postMovie(){
         dataType: "json",
         type: "post",
         data: createMovieObject(),
-        success: function(){    
+        success: function(){  
+              
             alert("Movie Sucessfully Posted!");
             runProgram()
 
@@ -220,17 +221,24 @@ function postMovie(){
 function createMovieObject(response){
             
             var title = $('#title-info').val();
+            $('#title-info').val('');
             var director = $('#director-info').val();
+            $('#director-info').val('');
             var genre = $('#genre-info').val();
+            $('#genre-info').val('');
+            var image = $('#image-info').val();
+            $('#image-info').val('');
 
-            console.log(title, director, genre)
+            console.log(title, director, genre, image)
             
             let newMovie = {
                 title: title,
                 director: director,
                 genre: genre,
+                image: image,
 
             }
+            console.log(newMovie);
 
             return newMovie;
 } 
