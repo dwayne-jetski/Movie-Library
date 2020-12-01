@@ -20,7 +20,7 @@ function buildCards(data){
         if(data[i].hasOwnProperty('image') == true){
             $(`#movie-tiles`).append(
 
-                `<button class = "col text-center col-sm-3 card-styles" type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
+                `<button class = "col text-center col-sm-3 card-styles" type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal">  
                     <div class="card-image-format">
                         <img class="card-img-top" src=${data[i].image}>
                     </div>
