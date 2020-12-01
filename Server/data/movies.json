@@ -54,10 +54,11 @@
     "genre": "Drama"
   },
   {
-    "id": 10,
+    "id": "10",
     "title": "Blade Runner 2049",
     "director": "Dennnis Villeneuve",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "image": ""
   },
   {
     "id": 11,
@@ -76,5 +77,26 @@
     "title": "What About Bob?",
     "director": "Director's Name",
     "genre": "Comedy"
+  },
+  {
+    "id": "14",
+    "title": "Get Out",
+    "director": "Jordan Peele",
+    "genre": "Horror",
+    "image": ""
+  },
+  {
+    "id": 15,
+    "title": "Bill And Ted's Excellent Adventure",
+    "director": "Stephen Herek",
+    "genre": "Comedy",
+    "image": ""
+  },
+  {
+    "id": 16,
+    "title": "The Nightmare Before Christmas",
+    "director": "Henry Selick ",
+    "genre": "Musical",
+    "image": ""
   }
 ]
