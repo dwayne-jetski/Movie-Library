@@ -1,15 +1,15 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "title": "The Departed",
     "director": "Martin Scorsese",
     "genre": "Drama"
   },
   {
-    "id": 2,
-    "title": "The Dark Knight",
-    "director": "Drama",
-    "genre": "Christopher Nolan"
+    "id": "2",
+    "title": "The Dark Night",
+    "director": "Christopher Nolan",
+    "genre": "Action"
   },
   {
     "id": 3,
@@ -18,8 +18,8 @@
     "genre": "Drama"
   },
   {
-    "id": 4,
-    "title": "Pineapple Express",
+    "id": "4",
+    "title": "Pineapple Express 5",
     "director": "David Gordon Green",
     "genre": "Comedy"
   },
@@ -36,52 +36,47 @@
     "genre": "Comedy"
   },
   {
-    "id": 7,
-    "title": "Shawn of the Deadliest",
+    "id": "7",
+    "title": "Shawn of the Dead 5",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
   {
-    "id": 8,
+    "id": "8",
     "title": "Point Break",
     "director": "Kathryn Bigelow",
     "genre": "Action"
   },
   {
-    "id": 9,
+    "id": "9",
     "title": "Gladiator",
     "director": "Ridley Scott",
     "genre": "Drama"
   },
   {
-    "id": 10,
+    "id": "10",
     "title": "Blade Runner 2049",
     "director": "Dennnis Villeneuve",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Blade_Runner_2049_poster.png"
   },
   {
-    "id": 11,
-    "title": "Blade Runner",
-    "director": "Ridley Scott",
-    "genre": "Sci-Fi"
-  },
-  {
-    "id": 12,
-    "title": "Scott Pilgrim Vs The World",
-    "director": "Edgar Wright",
-    "genre": "Comedy"
-  },
-  {
-    "id": 13,
-    "title": "What About Bob?",
-    "director": "Frank Oz",
-    "genre": "Comedy"
-  },
-  {
-    "id": 14,
+    "id": "11",
     "title": "The Nightmare Before Christmas",
     "director": "Henry Selick ",
     "genre": "Musical",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0zfIWDFgXWd_XA09PD-VoPzWAf5MeBFFENQ&usqp=CAU"
+  },
+  {
+    "id": "12",
+    "title": "Scott Pilgrim Vs The World 6",
+    "director": "Edgar Wright",
+    "genre": "Comedy"
+  },
+  {
+    "id": "13",
+    "title": "What About Bob?",
+    "director": "Frank Oz",
+    "genre": "Comedy"
   }
 ]
