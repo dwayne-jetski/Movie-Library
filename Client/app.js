@@ -212,7 +212,5 @@ $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('click')
 })
 
-$("[class*='modal']").on('hidden.bs.modal', function (e) {
-    runProgram();
-})
+
 
