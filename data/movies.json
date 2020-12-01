@@ -11,44 +11,41 @@
     "genre": "Christopher Nolan"
   },
   {
-    "id": "3",
-    "title": "Inception",
-    "director": "Christopher Nolan",
-    "genre": "Drama"
+    "id": "3"
   },
   {
-    "id": 4,
-    "title": "Pineapple Express",
+    "id": "4",
+    "title": "Pineapple Express 6",
     "director": "David Gordon Green",
     "genre": "Comedy"
   },
   {
     "id": "5",
-    "title": "Die Hard",
+    "title": "Die Hard 4",
     "director": "John McTiernan",
     "genre": "Action"
   },
   {
-    "id": 6,
-    "title": "Hot Fuzz",
+    "id": "6",
+    "title": "Hot Fuzz 3",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
   {
-    "id": 7,
-    "title": "Shawn of the Deadliest",
+    "id": "7",
+    "title": "Shawn of the Deadliest 1",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
   {
-    "id": 8,
-    "title": "Point Break",
+    "id": "8",
+    "title": "Point Break 2dafa",
     "director": "Kathryn Bigelow",
     "genre": "Action"
   },
   {
-    "id": 9,
-    "title": "Gladiator",
+    "id": "9",
+    "title": "Gladiator 2",
     "director": "Ridley Scott",
     "genre": "Drama"
   },
@@ -65,8 +62,8 @@
     "genre": "Sci-Fi"
   },
   {
-    "id": 12,
-    "title": "Scott Pilgrim Vs The World",
+    "id": "12",
+    "title": "Scott Pilgrim Vs The World 1",
     "director": "Edgar Wright",
     "genre": "Comedy"
   },
@@ -82,5 +79,12 @@
     "director": "Henry Selick ",
     "genre": "Musical",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0zfIWDFgXWd_XA09PD-VoPzWAf5MeBFFENQ&usqp=CAU"
+  },
+  {
+    "id": 15,
+    "title": "1",
+    "director": "1",
+    "genre": "1",
+    "image": ""
   }
 ]

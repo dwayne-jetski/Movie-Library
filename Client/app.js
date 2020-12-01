@@ -24,35 +24,35 @@ function buildCards(data){
         if(data[i].hasOwnProperty('image') == true){
             $(`#movie-tiles`).append(
 
-                `   <button class = "col text-center col-sm-3 card-styles " type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
-                         <div class="card-image-format">
-                            <img class="card-img-top" src=${data[i].image}>
-                        </div>
-                        <div class="">
-                            <h2 class="font-weight-bold">${data[i].title}</h2>
-                        </div>
-                     </button>
+                `<button class = "col text-center col-sm-3 card-styles" type="button" class="btn btn-primary" data-toggle="modal" data-target="#${data[i].id}Modal>  
+                    <div class="card-image-format">
+                        <img class="card-img-top" src=${data[i].image}>
+                    </div>
+                    <div class="">
+                        <h2 class="font-weight-bold">${data[i].title}</h2>
+                    </div>
+                </button>
                 
-                    <div class="modal fade" id="${data[i].id}Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title content-font-size" id="exampleModalLabel">${data[i].title}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <h7>Director: ${data[i].director}</h7><br>
-                                    <h7>Genre: ${data[i].genre}</h7>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" data-id="${data[i].id}" class="btn btn-primary btn-update ">Update</button>
-                                </div>
+                <div class="modal fade" id="${data[i].id}Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" id="ourModal-${data[i].id}">
+                            <div class="modal-header">
+                                <h5 class="modal-title content-font-size" id="exampleModalLabel">${data[i].title}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h7>Director: ${data[i].director}</h7><br>
+                                <h7>Genre: ${data[i].genre}</h7>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" data-id="${data[i].id}" class="btn btn-primary btn-update ">Update</button>
                             </div>
                         </div>
-                    </div>`)
+                    </div>
+                </div>`)
         }else{
             $(`#movie-tiles`).append(
 
@@ -64,7 +64,7 @@ function buildCards(data){
                     
                     <div class="modal fade" id="${data[i].id}Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                            <div class="modal-content" id="ourModal-${data[i].id}">
                                 <div class="modal-header">
                                     <h5 class="modal-title content-font-size" id="exampleModalLabel">${data[i].title}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -138,7 +138,7 @@ function userInputSearch(apiData){
 };
 
 function updateForm(data, dataId){
-    $("div.modal-content").replaceWith(
+    $(`#ourModal-${data[dataId].id}`).replaceWith(
         `<div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Enter Movie's Info</h5>
@@ -174,6 +174,10 @@ function updateMovie(dataId){
         success: function(){   
             alert("Movie Sucessfully Updated!");
             runProgram();
+            $('#your-modal-id').modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            
         }
     });
 }
@@ -184,7 +188,7 @@ function updateMovieObject(dataId){
     var director = $('#director-info-' + dataId).val();
     var genre = $('#genre-info-' + dataId).val();
 
-    console.log(title, director, genre)
+    //console.log(title, director, genre)
     
     let updatedMovie = {
         id: dataId,
@@ -226,7 +230,7 @@ function createMovieObject(response){
             var image = $('#image-info').val();
             $('#image-info').val('');
 
-            console.log(title, director, genre, image)
+            //console.log(title, director, genre, image)
             
             let newMovie = {
                 title: title,
@@ -235,7 +239,7 @@ function createMovieObject(response){
                 image: image,
 
             }
-            console.log(newMovie);
+            //console.log(newMovie);
 
             return newMovie;
 } 
@@ -244,4 +248,9 @@ function createMovieObject(response){
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('click')
-  })
+})
+
+$("[class*='modal']").on('hidden.bs.modal', function (e) {
+    runProgram();
+})
+
