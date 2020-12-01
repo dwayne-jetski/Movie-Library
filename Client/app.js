@@ -137,9 +137,6 @@ function userInputSearch(apiData){
     });
 };
 
-
-
-
 function updateForm(data, dataId){
     $("div.modal-content").replaceWith(
         `<div class="modal-content">

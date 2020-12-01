@@ -1,18 +1,17 @@
 [
   {
-    "id": 1,
-    "title": "The Departed",
+    "id": "1",
+    "title": "The Departed 4",
     "director": "Martin Scorsese",
     "genre": "Drama"
   },
   {
-    "id": 2,
-    "title": "The Dark Knight",
+    "id": "2",
     "director": "Drama",
     "genre": "Christopher Nolan"
   },
   {
-    "id": 3,
+    "id": "3",
     "title": "Inception",
     "director": "Christopher Nolan",
     "genre": "Drama"
@@ -24,7 +23,7 @@
     "genre": "Comedy"
   },
   {
-    "id": 5,
+    "id": "5",
     "title": "Die Hard",
     "director": "John McTiernan",
     "genre": "Action"
